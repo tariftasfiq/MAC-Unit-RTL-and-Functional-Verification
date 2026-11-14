@@ -1,0 +1,86 @@
+irun(64): 15.10-s015: (c) Copyright 1995-2016 Cadence Design Systems, Inc.
+TOOL:	irun(64)	15.10-s015: Started on Apr 02, 2026 at 08:23:49 BDT
+irun
+	+access+r
+	-disable_sem2009
+	-svseed random
+	-sysv
+	../src/mac_unit.v
+	../src/mac_unit_tb.sv
+	-coverage all
+	-covoverwrite
+Recompiling... reason: file '../src/mac_unit_tb.sv' is newer than expected.
+	expected: Thu Apr  2 08:22:52 2026
+	actual:   Thu Apr  2 08:23:37 2026
+file: ../src/mac_unit_tb.sv
+	module worklib.testbench:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		$unit_0x06a90859
+		testbench
+
+	Extracting FSMs for coverage:
+		worklib.mac_unit
+		worklib.testbench
+	Total FSMs extracted = 0
+	Building instance overlay tables: .................... Done
+	Enabling instrumentation for coverage types: block expression FSM toggle functional
+ncelab: *W,COVDCL: By default expression coverage is scored only for Verilog logical operators (|| and &&) and VHDL logical operators (OR, AND, NOR, and NAND), and is scored only in condition expressions. To score coverage for other operators and for expressions in other statements, use the "set_expr_coverable_operators" and "set_expr_coverable_statements" coverage configuration file commands with suitable options at elaboration.
+	Generating native compiled code:
+		worklib.testbench:sv <0x03ec9a9e>
+			streams:  20, words: 14819
+  int sim_count = 50000; 
+              |
+ncelab: *W,COVUTA (../src/mac_unit_tb.sv,288|14): Toggle coverage is not supported for SystemVerilog integer, real, string, dynamic array, sparse memory, and array of struct. It is also not supported for VHDL multi-dimensional array and array of record. There may also be other such objects in the design.
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                     Instances  Unique
+		Modules:                     2       2
+		Interfaces:                  1       1
+		Registers:                  64      87
+		Scalar wires:               12       -
+		Vectored wires:             12       -
+		Always blocks:               1       1
+		Initial blocks:              5       5
+		Clocking blocks:             2       2
+		Clocking items:             16      16
+		Parallel blocks:             1       1
+		Cont. assignments:           8      12
+		Pseudo assignments:         10      10
+		Compilation units:           1       1
+		SV Class declarations:       3       3
+		SV Class specializations:    3       3
+		Simulation timescale:      1ps
+	Writing initial simulation snapshot: worklib.testbench:sv
+Loading snapshot worklib.testbench:sv .................... Done
+SVSEED set randomly from command line: -1396042477
+ncsim> source /home/eda/cadence/lnx/INCSIVE/icd/icdcm_t1b_016/flow/INCISIV/INCISIV151/15.10.015/lnx86/tools/inca/files/ncsimrc
+ncsim> run
+
+---------------- 8-BIT UNIQUE COVERAGE REPORT ----------------
+[ BN_EXTREME_POS x  BN_EXTREME_NEG | ACCUMULATE |  ACTIVE_FLOW] Unique Hits: 225 / 225 (100.00%) [FULL]
+[ BN_EXTREME_NEG x  BN_EXTREME_POS | ACCUMULATE |  ACTIVE_FLOW] Unique Hits: 225 / 225 (100.00%) [FULL]
+[ BN_EXTREME_NEG x  BN_EXTREME_NEG | ACCUMULATE |  ACTIVE_FLOW] Unique Hits: 225 / 225 (100.00%) [FULL]
+[ BN_EXTREME_POS x  BN_EXTREME_POS | ACCUMULATE |  ACTIVE_FLOW] Unique Hits: 225 / 225 (100.00%) [FULL]
+[BN_BIT_PATTERNS x  BN_EXTREME_POS | ACCUMULATE |  ACTIVE_FLOW] Unique Hits: 364 / 375 (97.07%)       
+[BN_BIT_PATTERNS x  BN_EXTREME_NEG | ACCUMULATE |  ACTIVE_FLOW] Unique Hits: 360 / 375 (96.00%)       
+[BN_BIT_PATTERNS x BN_BIT_PATTERNS | ACCUMULATE |  ACTIVE_FLOW] Unique Hits: 545 / 625 (87.20%)       
+
+FINAL RESULT: PASS=50000 FAIL=0
+Simulation complete via $finish(1) at time 500035 NS + 1
+../src/mac_unit_tb.sv:331     $finish;
+ncsim> exit
+
+coverage setup:
+  workdir  :  ./cov_work
+  dutinst  :  testbench(testbench)
+  scope    :  scope
+  testname :  test_sv-1396042477
+
+coverage files:
+  model(design data) :  ./cov_work/scope/icc_23b4fb3b_00000000.ucm (reused)
+  data               :  ./cov_work/scope/test_sv-1396042477/icc_23b4fb3b_00000000.ucd
+TOOL:	irun(64)	15.10-s015: Exiting on Apr 02, 2026 at 08:23:54 BDT  (total: 00:00:05)
